@@ -1,0 +1,39 @@
+
+<html>
+  <head>
+    <title>Spaces Widget - Contact Page Demo</title>
+
+    <!-- Latest Widget CSS served via CDN -->
+    <link rel="stylesheet" href="https://code.s4d.io/widget-space/latest/main.css">
+
+    <!-- It is tempting to load the widget JS here. This is not a good idea. -->
+    <!-- Only put scripts here that MUST load before the body (very rare) -->
+    <!-- The <head> section must load BEFORE the <body> loads, causing the page to be slow -->
+  </head>
+
+  <body>
+
+    <!-- Create a dedicated Spark user (example named: "From Website") -->
+    <!-- Paste the accounts access token below where it says AN_ACCESS_TOKEN -->
+    <!-- Create a new space as the user (example named: "Contact Page") -->
+    <!-- Paste the spaces ID below where it says XXXXXXXXXXXXXXX -->
+    <!-- You can get the ID by entering the space from the Spark Web Client, check the end of the URL. -->
+
+    <h1>Cisco Spark Widget Demo</h1>
+    <p>This simple demo shows a very basic <a href="https://github.com/ciscospark/react-ciscospark/tree/master/packages/node_modules/@ciscospark/widget-space">
+       Spark Spaces Widget</a> integration.</br>
+       Once you have completed setup, the Widget will render below.</br>
+       Please right-click and select "view source" for instructions on setting this up.
+    </p>
+
+    <div  id="ciscospark-widget"
+		  class="ciscospark-widget"
+		  data-toggle="ciscospark-space"
+		  data-access-token="AN_ACCESS_TOKEN"
+		  data-to-person-email/>
+
+    <!-- Latest widget JS, load this last since it is currently 2.5MB -->
+    <script src="https://code.s4d.io/widget-space/latest/bundle.js"></script>
+
+  </body>
+</html>

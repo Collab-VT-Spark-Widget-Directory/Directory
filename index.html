@@ -1,0 +1,78 @@
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="css/source-sans-pro.js"></script>
+    <link href="css/ratchet.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+
+<script id="home-tpl" type="text/x-handlebars-template">
+    <header class="bar-title"><h1 class="title">Employee Directory</h1></header>
+    <div class="bar-standard bar-header-secondary"><input class='search-key' type="text" style="height:31px;"/></div>
+    <div class="content"><ul class='list'></ul></div>
+</script>
+
+<script id="employee-li-tpl" type="text/x-handlebars-template">
+    {{#.}}
+    <li>
+        <a href="#employees/{{this.id}}" class="tappable">
+        <img src='img/{{firstName}}_{{lastName}}.jpg'/>
+        <p>{{this.firstName}} {{this.lastName}}</p>
+        <p>{{this.title}}</p>
+        <span class="chevron"></span><span class="count">{{reports}}</span>
+        </a>
+    </li>
+    {{/.}}
+</script>
+
+<script id="employee-tpl" type="text/x-handlebars-template">
+    <header class="bar-title"><a class="button-prev" href="#">Back</a><h1 class="title">Details</h1></header>
+    <div class='content'>
+        <div class="details">
+            <img src='img/{{firstName}}_{{lastName}}.jpg'/>
+            <h1>{{firstName}} {{lastName}}</h1>
+            <h2>{{title}}</h2>
+            <h2>{{city}}</h2>
+        </div>
+        <ul class="list inset" style="clear:both;">
+            {{#if managerId}}
+            <li><a href="#employees/{{managerId}}" class="tappable"><p>View Manager</p><p>{{managerName}}</p><div class="action-icon icon-manager"/></a></li>
+            {{/if}}
+            {{#if reports}}
+            <li><a href="#employees/{{id}}/reports" class="tappable"><p>View Direct Reports</p><p>{{reports}}</p><div class="action-icon icon-reports"/></a></li>
+            {{/if}}
+            <li><a href="Your Spark Widget link here" target="_blank"><p>Spark Message</p><img src="./img/favicon.ico"></a></li>
+            <li><a href="Your Spark Widget link here" target="_blank"><p>Spark Call</p><img src="./img/favicon.ico"></a></li>
+            <li><a href="sms:{{cellPhone}}" class="tappable"><p>Message</p><p>{{cellPhone}}</p><div class="action-icon icon-sms"/></a></li>
+            <li><a href="mailto:{{email}}" class="tappable"><p>Email</p><p>{{email}}</p><div class="action-icon icon-mail"/></a></li>
+            <li><a href="sms:{{cellPhone}}" class="tappable"><p>Map</p><p>{{city}}</p><div class="action-icon icon-location"/></a></li>
+        </ul>
+    </div>
+</script>
+
+<script id="reports-tpl" type="text/x-handlebars-template">
+    <header class="bar-title"><a class="button-prev" href="#">Back</a><h1 class="title">Direct Reports</h1></header>
+    <div class='content'>
+        <div class="details">
+            <img src='img/{{firstName}}_{{lastName}}.jpg'/>
+            <h1>{{firstName}} {{lastName}}</h1>
+            <h2>{{title}}</h2>
+            <h2>{{city}}</h2>
+        </div>
+        <ul class="list"></ul>
+    </div>
+</script>
+
+<script src="phonegap.js"></script>
+<script src="lib/fastclick.js"></script>
+<script src="lib/zepto.min.js"></script>
+<script src="lib/handlebars.js"></script>
+<script src="js/storage/memory-store.js"></script>
+<script src="js/HomeView.js"></script>
+<script src="js/EmployeeView.js"></script>
+<script src="js/ReportsView.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

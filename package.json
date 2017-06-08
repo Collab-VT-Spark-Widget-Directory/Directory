@@ -1,0 +1,24 @@
+{
+  "name": "directory",
+  "version": "1.0.0",
+  "description": "Corporate Directory integration with Spark Widget",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.15.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Collab-VT-Spark-Widget-Directory/Directory.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Collab-VT-Spark-Widget-Directory/Directory/issues"
+  },
+  "homepage": "https://github.com/Collab-VT-Spark-Widget-Directory/Directory#readme"
+}

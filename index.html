@@ -1,0 +1,73 @@
+
+
+<!doctype html>
+<html lang="us">
+<head>
+	<meta charset="utf-8">
+	<title>SRE Spark Widget</title>
+	<link href="styles/jquery-ui.css" rel="stylesheet">
+	
+	<link rel="shortcut icon" href="./favicon.ico">
+
+
+<script src="scripts/jquery.js"></script>
+<script src="scripts/jquery-ui.js"></script>
+
+
+ <style>
+  h2, p {
+	  font-family: Verdana,Arial,sans-serif;
+	  color:#F9F5F6;
+  }
+  
+  .selectable .ui-selecting { background: #62c2ef; cursor:crosshair}
+  .selectable .ui-selected { background: #1999d5; color: white; }
+  .selectable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+  .selectable li { margin: 3px; padding: 0.4em; font-size: 1.4em; height: 18px; }
+
+ #welcometext
+{
+	font-family: Arial,sans-serif;
+	color:#F9F5F6;
+    border:2px white solid;
+}
+  
+  </style>
+
+</head>
+
+<body style="background-color:#114158">
+
+<table>
+	<tr>
+   	  	<td rowspan="2" width="260"><img src="images/spark.png" width="204" height="203" alt=""/></td>
+        <td style="text-align:center"><h2>Welcome to the SRE Spark Widget API Lab</h2></td>
+    </tr>
+    <tr>
+    	<td style="text-align:center" id="welcometext">Before using the API, you'll need to be authenticated with the WebEx/Spark cloud.<br>
+            Once you are authenticated, you'll be redirected back to this site<br>
+            and then you can use the APIs on this page.<br><br>
+              <button class="ui-button ui-widget ui-corner-all" id="authenticate">
+               			<img src="images/lock-icon.png" width="24" height="24" alt="" style="position:relative; top:5px"/>
+                         Proceed to Authentication
+              </button>
+        </td>
+  </tr>  
+</table>
+
+<script>
+
+$(document).ready(function() {
+    $("#authenticate").click(function(){
+	  	var ref = "Your OAuth URL here";
+	  $(location).attr('href',ref);  
+    }); 
+});
+
+</script>
+
+
+</body>
+</html>
+
+

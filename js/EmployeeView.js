@@ -13,5 +13,7 @@ var EmployeeView = function(employee) {
 
  }
 
-Handlebars.registerHelper('token', function(block) {    return token; //just return global variable value  });
+Handlebars.registerHelper('token', function(block) {    
+    return token; //just return global variable value 
+ });
 EmployeeView.template = Handlebars.compile($("#employee-tpl").html());
